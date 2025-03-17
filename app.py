@@ -10,11 +10,11 @@ def home():
 
 @app.route('/htop')
 def htop():
-    name = "Sudhakar Sharma"  # Replace with your full name
-    username = os.getenv("USER", "unknown")  # Fix for Codespaces
+    name = "Sudhakar Sharma" 
+    username = os.getenv("USER", "unknown")  
     ist_time = datetime.datetime.utcnow() + datetime.timedelta(hours=5, minutes=30)
     
-    # Get the top command output
+
     top_output = subprocess.getoutput("top -bn1")
 
     return f"""
@@ -29,5 +29,5 @@ def htop():
     </html>
     """
 
-if __name__ == '__main__':  # Fixed here
+if __name__ == '__main__':  
     app.run(host='0.0.0.0', port=5000)
